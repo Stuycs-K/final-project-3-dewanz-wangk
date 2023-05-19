@@ -28,3 +28,7 @@ These two function declarations are equivalent
 Shellshock is a series of 6 exploits that all take advantage of the bash parser to cause unintended code execution. They effect bash versions 1.03 to 4.3, which is 25 years of bashs since 1989!
 
 The exploit looks something like this:
+
+## Attack Vector 0: openSSH ForceCommand
+
+## Attack Vector 1: CGI Script
