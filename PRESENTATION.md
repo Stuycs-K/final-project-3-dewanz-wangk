@@ -2,6 +2,18 @@
 ## Bash Overview
 Before we talk about the shellshock exploit, lets have a quick refresher about bash
 ### Variables
+
+Bash treats everything as a string. You can access variables by appending '$' in front of a variable name
+```bash
+foo=bar
+echo $foo
+# bar
+
+foo="bar"
+echo $foo
+# bar
+```
+
 ### Function Declaration
 ```bash
 function x {
