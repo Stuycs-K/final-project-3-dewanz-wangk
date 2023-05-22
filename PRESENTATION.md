@@ -3,7 +3,7 @@
 Before we talk about the shellshock exploit, lets have a quick refresher about bash
 ### Variables
 
-Bash treats everything as a string. You can access variables by appending '$' in front of a variable name
+Bash treats everything as a string by default. You can access variables by appending '$' in front of a variable name
 ```bash
 foo=bar
 echo $foo
@@ -13,6 +13,17 @@ foo="bar"
 echo $foo
 # bar
 ```
+
+However, any strings with spaces need quotes for proper assignment
+```bash
+foo=bar bar
+# bar: command not found
+
+foo="bar bar"
+echo $foo
+"bar bar"
+```
+
 ### Environment Variables
 Environment variables store data used by the operating system and other programs. When you open a new shell session, these pre-defined variables will be ready for your use. 
 
