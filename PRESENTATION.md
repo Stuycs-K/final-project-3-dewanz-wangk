@@ -19,6 +19,21 @@ Environment variables store data used by the operating system and other programs
 For example, `$HOME` contains your home directory, `$PATH` is the list of directories that programs have access to, etc.
 
 
+### The `env` command
+`env` is a command that allows you to manipulate environment variables. One way `env` can be used is to set environment variables for commands:
+```bash
+$ env foo=bar printenv 
+HOSTTYPE=x86_64
+LANG=C.UTF-8
+PATH=/home/alice:/usr/local/bin
+TERM=xterm-256color
+HOME=/home/alice
+USER=alice
+LOGNAME=alice
+SHELL=/usr/bin/bash
+foo=bar
+```
+Here we run `printenv`, which prints all environment variables, after using `env` to make a new environment variable `foo` that equals `bar`, which appears in the `printenv` output as expected.
 
 ### Function Declaration
 ```bash
@@ -32,6 +47,7 @@ x () {
 x='() { echo "hello world"; }'
 ```
 These three function declarations are equivalent
+
 ## Shellshock
 Shellshock is a series of 6 exploits that all take advantage of the bash parser to cause unintended code execution. They effect bash versions 1.03 to 4.3, which is 25 years of bashs since 1989!
 
@@ -40,7 +56,6 @@ The exploit looks something like this:
 ```bash
 env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
 ```
-The `env` command set 
 
 
 =======
