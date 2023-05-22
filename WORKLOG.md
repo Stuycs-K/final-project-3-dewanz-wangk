@@ -11,12 +11,12 @@ info
 info
 
 
-## GROUP MEMBER 2
+## Zawad Dewan
 
-### date x
+### 5/19/23
 
-info
+Start of presentation md, started sections on bash review
 
-### date y
+### 5/22/23
 
-info
+Finished(?) and added more to bash review section, moving on to exploit and implementations soonTM
