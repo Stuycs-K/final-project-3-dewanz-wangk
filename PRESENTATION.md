@@ -78,7 +78,7 @@ Instead of allowing a service to execute arbitrary commands over SSH, a "Forced 
 
 ### Conditions for Exploit
 0. Victim's bash version must be of a known vulnerable version (through 4.3)
-1. 
+1. The adversary should be able to control the environment variables being passed
 2. A new subprocess/bash shell must be spawned
 
 ## Attack Vector 1: CGI Script
