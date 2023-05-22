@@ -14,7 +14,7 @@ echo $foo
 # bar
 ```
 ### Environment Variables
-Environment variables store data used by the operating system and other programs.
+Environment variables store data used by the operating system and other programs. When you open a new shell session, these pre-defined variables will be ready for your use. 
 
 For example, `$HOME` contains your home directory, `$PATH` is the list of directories that programs have access to, etc.
 

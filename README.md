@@ -5,5 +5,7 @@ The shellshock vulnerability is a remote command excution vulnerabiltiy identifi
 
 ## Exploit Directions
 To exploit the shellshock vulnerability, 
-## Links
 
+## Links
+[Presentation](./PRESENTATION.md)  
+[TryHackMe Room](./HOMEWORK.md)
