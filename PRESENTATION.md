@@ -77,6 +77,8 @@ SSH (Secure Shell) is a service that allows user to securely access a shell on a
 Instead of allowing a service to execute arbitrary commands over SSH, a "Forced Command" can be used to restrict a user to only executing one command. When a Forced Command is specified, this user should not be able to execute any other commands.
 
 ### Conditions for Exploit
-0. 
+0. Victim's bash version must be of a known vulnerable version (through 4.3)
+1. 
+2. A new subprocess/bash shell must be spawned
 
 ## Attack Vector 1: CGI Script
