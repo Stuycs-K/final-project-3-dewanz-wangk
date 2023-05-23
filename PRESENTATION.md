@@ -81,4 +81,10 @@ Instead of allowing a service to execute arbitrary commands over SSH, a "Forced 
 1. The adversary should be able to control the environment variables being passed
 2. A new subprocess/bash shell must be spawned
 
+### Walkthrough
+To begin our exploit, we will first examine the behavior of environment variables in BASH to see how we can manipulate the ability in BASH to save functions as environment vars.
+
+
+  
+
 ## Attack Vector 1: CGI Script
