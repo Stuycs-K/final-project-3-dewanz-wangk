@@ -89,4 +89,14 @@ Instead of allowing a service to execute arbitrary commands over SSH, a "Forced 
 1. The adversary should be able to control the environment variables being passed
 2. A new subprocess/bash shell must be spawned
 
+### Walkthrough
+To begin our exploit, we will first examine the behavior of environment variables in BASH to see how we can manipulate the ability in BASH to save functions as environment vars.
+
+<insert bash one-liner for testing if system is vulnerable>
+
+In addition, OpenSSH has a “ForceCommand” feature, where a fixed command is executed when the user logs in, instead of just running an unrestricted command shell. The fixed command is executed even if the user specified that another command should be run.
+
+
+  
+
 ## Attack Vector 1: CGI Script
