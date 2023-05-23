@@ -1,12 +1,12 @@
 # Work Log
 
-## GROUP MEMBER 1
+## Kitty Wang
 
-### date x
+### 05/19/23
 
-info
+Completed overall project description in README.md, and added the other two sections for execution instructions and links.
 
-### date y
+### 05/22/23
 
 info
 
