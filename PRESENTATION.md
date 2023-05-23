@@ -55,9 +55,11 @@ x () {
     echo "hello world"
 }
 
+x () { echo "hello world" ; }
+
 x='() { echo "hello world"; }'
 ```
-These three function declarations are equivalent
+These four function declarations are equivalent, though the last one is only valid for older versions of bash.
 
 ## Shellshock
 Shellshock is a series of 6 exploits that all take advantage of the bash parser to cause unintended code execution. They affect bash versions 1.03 to 4.3, which is 25 years of bashs since 1989!
@@ -67,7 +69,13 @@ The exploit looks something like this:
 ```bash
 env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
 ```
+This command runs `echo this is a test` on a new instant of bash with an environment variable `x='() { :;}; echo vulnerable'`. The first part of the variable definition, `() { :;}`, declares an empty function, and the function declaration is followed by a newline and extra code, `echo vulnerable`.
 
+If your system prints `vulnerable` in addition to `this is a test`, that means you are susceptible to a shellshock attack. This occurs because in older versions of bash, the variable parser would convert any functions defined as variables into code blocks and execute them.
+
+In this case, `x='() { :;}; echo vulnerable'` would be converted by the bash parser into `x () { : ; }; echo vulnerable`, and then execute this line of code. The problem is, bash interprets `;` as a newline, which means it will also execute the code following the function declaration.
+
+For very, very obvious reasons, this is incredibly bad.
 
 =======
 
