@@ -10,6 +10,10 @@ Completed overall project description in README.md, and added the other two sect
 
 Started writing background in PRESENTATION.md to introduce the OpenSSH ForceCommand attack vector, adding the list of prerequisites on a target machine that are necessary for shellshock.
 
+### 5/23/23
+
+Finish explaining tools and introduction of ForceCommand that will be used in the OpenSSH RCE shellshock attack. 
+
 
 ## Zawad Dewan
 
