@@ -20,3 +20,7 @@ Start of presentation md, started sections on bash review
 ### 5/22/23
 
 Finished(?) and added more to bash review section, moving on to exploit and implementations soonTM
+
+### 5/23/23
+
+Finished the main ShellShock section, i.e. why the function declaration leads to unintended code execution
