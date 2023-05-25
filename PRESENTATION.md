@@ -104,3 +104,29 @@ In addition, OpenSSH has a “ForceCommand” feature, where a fixed command is 
   
 
 ## Attack Vector 1: CGI Script
+
+CGI is Common Gateway Interface, a specification that enables web servers to execute external programs, usually scripts. For example, you can build webpages and forms using shell scripts:
+```sh
+#!/bin/bash
+
+# hello.sh
+
+echo "Content-type: text/html"
+echo ""
+
+echo '<html>'
+echo '<head>'
+echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">'
+echo '<title>Hello World</title>'
+echo '</head>'
+echo '<body>'
+echo 'Hello World'
+echo '</body>'
+echo '</html>'
+
+exit 0
+```
+It looks a lot like this shell script is just outputting HTML, which is exactly what it does.
+
+If you started a webserver and navigated to the file, it would look something like this:
+![hello.png](pictures/hello.png)
