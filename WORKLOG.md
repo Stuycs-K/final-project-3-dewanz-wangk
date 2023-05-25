@@ -28,3 +28,7 @@ Finished(?) and added more to bash review section, moving on to exploit and impl
 ### 5/23/23
 
 Finished the main ShellShock section, i.e. why the function declaration leads to unintended code execution
+
+### 5/24/23
+
+Currently fiddling around with VMs and shellshock on a vulnerable ubuntu version (14.04).
