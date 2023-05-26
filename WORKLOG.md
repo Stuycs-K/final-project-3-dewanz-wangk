@@ -32,3 +32,7 @@ Finished the main ShellShock section, i.e. why the function declaration leads to
 ### 5/24/23
 
 Currently fiddling around with VMs and shellshock on a vulnerable ubuntu version (14.04).
+
+### 5/25/23
+
+Messing around with webservers and using burpsuite to initiate attacks, added to the cgi section of the presentation, demo server soon
