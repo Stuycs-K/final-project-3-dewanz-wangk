@@ -130,3 +130,6 @@ It looks a lot like this shell script is just outputting HTML, which is exactly 
 
 If you started a webserver and navigated to the file, it would look something like this:
 ![hello.png](pictures/hello.png)
+
+We can intercept the request in burp suite, and it looks something like this:
+![burpreq.png](pictures/burpreq.png)
