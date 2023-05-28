@@ -36,3 +36,7 @@ Currently fiddling around with VMs and shellshock on a vulnerable ubuntu version
 ### 5/25/23
 
 Messing around with webservers and using burpsuite to initiate attacks, added to the cgi section of the presentation, demo server soon
+
+### 5/26/23
+
+Finished(?) cgi section, will check over later, started making thm room
