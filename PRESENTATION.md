@@ -101,7 +101,6 @@ If your bash shell prints out `shellshocked` and `vulnerable`, then uh-oh!
 In addition, OpenSSH has a “ForceCommand” feature, where a fixed command is executed when the user logs in, instead of just running an unrestricted command shell. The fixed command is executed even if the user specified that another command should be run.
 
 Now that we've confirmed the target system is vulnerable, let's get started with the exploit!
-  
 
 ## Attack Vector 1: CGI Script
 
@@ -130,6 +129,3 @@ It looks a lot like this shell script is just outputting HTML, which is exactly 
 
 If you started a webserver and navigated to the file, it would look something like this:
 ![hello.png](pictures/hello.png)
-
-We can intercept the request in burp suite, and it looks something like this:
-![burpreq.png](pictures/burpreq.png)
