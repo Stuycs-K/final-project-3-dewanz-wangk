@@ -84,8 +84,6 @@ In this case, `x='() { :;}; echo vulnerable'` would be converted by the bash par
 
 For very, very obvious reasons, this is incredibly bad.
 
-=======
-
 ## Attack Vector 0: OpenSSH RCE
 SSH (Secure Shell) is a service that allows user to securely access a shell on a remote computer. Typically, it is good security practice to only grant services the minimum required permissions. 
 
