@@ -22,6 +22,9 @@ Stepping through the exploit procedures with ForceCommand, diagnosing unanticipa
 
 Started making THM room for homework activity.
 
+### 05/30/23
+
+Trying to get VM working on the THM room.
 
 
 ## Zawad Dewan
