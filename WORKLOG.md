@@ -52,3 +52,7 @@ Messing around with webservers and using burpsuite to initiate attacks, added to
 ### 5/26/23
 
 Finished(?) cgi section, will check over later, started making thm room
+
+### 5/27 - 5/30 mega weekend worklog update
+
+Finished making a "fully featured" vm for the room, uploaded to tryhackme, room itself is pretty much done with its questions, next step is making demo on oracle cloud server
