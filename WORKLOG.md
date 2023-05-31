@@ -26,6 +26,10 @@ Started making THM room for homework activity.
 
 Trying to get VM working on the THM room.
 
+### 05/31/23
+
+Finish SSH exploit section.
+
 
 ## Zawad Dewan
 
