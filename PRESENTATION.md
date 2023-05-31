@@ -90,22 +90,28 @@ SSH (Secure Shell) is a service that allows user to securely access a shell on a
 Instead of allowing a service to execute arbitrary commands over SSH, a "Forced Command" can be used to restrict a user to only executing one command. When a Forced Command is specified, this user should not be able to execute any other commands.
 
 ### Conditions for Exploit
-0. Victim's bash version must be of a known vulnerable version (through 4.3)
-1. The adversary should be able to control the environment variables being passed
-2. A new subprocess/bash shell must be spawned
+0. Victim's bash version must be of a known vulnerable version (through 4.3).
+1. The adversary should have a SSH connection via authorized keys to begin with.
+2. User must be restricted to run some specific commands.
 
 ### Walkthrough
-To begin our exploit, we will first examine the behavior of environment variables in BASH to see how we can manipulate the ability in BASH to save functions as environment vars.
+OpenSSH has a "ForceCommand" feature where a fixed command is executed when the user logs in, instead of just running an unrestricted command shell. The fixed command is executed even if the user specified that another command should be run. 
 
-To test for whether your system is vulnerable, you can run the following line, which stores a function consisting of two echoes and a bash call as an environment variable `x`.
+For the exploit, our objective is to achieve RCE and create an environment where any arbitrary command may be run.
+
+To begin our exploit, we will first test for whether the target system is vulnerable, and we can run the one-liner we've introduced above.
+
 ```bash
-$env x= ‘() { :;}; echo shellshocked’ bash –c “echo vulnerable”
+$env x= ‘() { :;}; echo shellshocked’ bash –c “echo test”
 ```
-If your bash shell prints out `shellshocked` and `vulnerable`, then uh-oh!
 
-In addition, OpenSSH has a “ForceCommand” feature, where a fixed command is executed when the user logs in, instead of just running an unrestricted command shell. The fixed command is executed even if the user specified that another command should be run.
+If bash prints out both `shellshocked` and `test`, then we're good to go!
 
-Now that we've confirmed the target system is vulnerable, let's get started with the exploit!
+Let's see what restrictions are implemented for the user on the network:
+
+![repeater.png](pictures/ssh_original_command.png)
+
+Here, we can see that upon login and an attempt to pass `ls` as a command line argument, the fixed command from the script in the `authorized_keys` on the server is executed first, which we've written as a script preventing ls calls 
 
 ## Attack Vector 1: CGI Script
 
