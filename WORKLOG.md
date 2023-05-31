@@ -18,6 +18,10 @@ Finish explaining tools and introduction of ForceCommand that will be used in th
 
 Stepping through the exploit procedures with ForceCommand, diagnosing unanticipated issues along the way.
 
+### 05/25/23
+
+Sort out details of exploit walkthrough highlights, testing exploit demo.
+
 ### 05/26/23
 
 Started making THM room for homework activity.
@@ -28,7 +32,7 @@ Trying to get VM working on the THM room.
 
 ### 05/31/23
 
-Finish SSH exploit section.
+Finish SSH exploit section. Set up server for demo.
 
 
 ## Zawad Dewan
