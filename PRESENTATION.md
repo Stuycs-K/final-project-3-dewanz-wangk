@@ -102,16 +102,34 @@ For the exploit, our objective is to achieve RCE and create an environment where
 To begin our exploit, we will first test for whether the target system is vulnerable, and we can run the one-liner we've introduced above.
 
 ```bash
-$env x= ‘() { :;}; echo shellshocked’ bash –c “echo test”
+$ env x= ‘() { :;}; echo shellshocked’ bash –c “echo test”
 ```
 
 If bash prints out both `shellshocked` and `test`, then we're good to go!
 
 Let's see what restrictions are implemented for the user on the network:
 
-![repeater.png](pictures/ssh_original_command.png)
+![attempt.png](pictures/arbitrary_attempt.png)
 
-Here, we can see that upon login and an attempt to pass `ls` as a command line argument, the fixed command from the script in the `authorized_keys` on the server is executed first, which we've written as a script preventing ls calls 
+Here, we can see that upon login and an attempt to pass `date` as a command line argument, the fixed command from the script in the `authorized_keys` on the server is executed first, which we've written as a script preventing `date` calls.
+
+![command.png](pictures/force_command.png)
+
+Now, let's use the classic Shellshock exploit to bypass this:
+
+![ssh_exploit.png](pictures/ssh_exploit.png)
+
+We're just adding the following line after our typical line for connection:  
+
+```() { :;}; date```
+
+And bingo! 
+
+![bypassed.png](pictures/bypassed.png)
+
+Unlike the previous case, where ‘date’ is blocked by script.sh specified in the authorized_keys file, this time our arbitrary command itself is becoming the first command and hence we are getting the date printed.
+
+The scope of this exploit is pretty limited, but it can be a very useful intermediate attack leveraged to establish a reverse shell through something like a firewall before targeting other machines on the same network.
 
 ## Attack Vector 1: CGI Script
 
