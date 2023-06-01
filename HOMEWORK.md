@@ -1,1 +1,4 @@
-# THIS DOCUMENT IS REQUIRED
+# Homework
+
+Try it out - Shellshock practical!
+[TryHackMe Room](https://tryhackme.com/room/shellshock)
