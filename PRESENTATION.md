@@ -114,6 +114,7 @@ Let's see what restrictions are implemented for the user on the network:
 Here, we can see that upon login and an attempt to pass `date` as a command line argument, the fixed command from the script in the `authorized_keys` on the server is executed first, which we've written as a script preventing `date` calls.
 
 ![command.png](pictures/force_command.png)
+![script.png](pictures/script.png)
 
 Now, let's use the classic Shellshock exploit to bypass this:
 
