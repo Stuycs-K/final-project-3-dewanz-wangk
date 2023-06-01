@@ -117,8 +117,6 @@ Here, we can see that upon login and an attempt to pass `date` as a command line
 
 Now, let's use the classic Shellshock exploit to bypass this:
 
-![ssh_exploit.png](pictures/ssh_exploit.png)
-
 We're just adding the following line after our typical line for connection:  
 
 ```() { :;}; date```
