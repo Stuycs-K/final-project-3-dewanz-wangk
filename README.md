@@ -8,8 +8,10 @@ The shellshock vulnerability is a remote command excution vulnerabiltiy identifi
 ## Directions
 Read PRESENTATION.md to learn about the exploit, and then headover to the TryHackMe room for a "practical" example of using the exploit
 If you want to run the vms yourself, you can download them here and run them in a virtualizer of your choice (we used virtualbox)
-TryHackMe VM: https://file.io/TKHkrKkluuAn
-Demo VM: https://file.io/DaMFuASj3oBX
+
+TryHackMe VM: https://uploadnow.io/files/jdghFr1
+
+Demo VM: https://uploadnow.io/files/pnNCvpf
 ## Links
 [Presentation](./PRESENTATION.md)  
 [HOMEWORK - TryHackMe Room](./HOMEWORK.md)
