@@ -10,9 +10,8 @@ Read PRESENTATION.md to learn about the exploit, and then head over to the TryHa
 
 If you want to run the vms yourself, you can download them here and run them in a virtualizer of your choice (we used virtualbox)
 
-TryHackMe VM: https://uploadnow.io/files/jdghFr1
-
-Demo VM: https://uploadnow.io/files/pnNCvpf
 ## Links
 [Presentation](./PRESENTATION.md)  
-[HOMEWORK - TryHackMe Room](./HOMEWORK.md)
+[HOMEWORK - TryHackMe Room](./HOMEWORK.md)  
+[TryHackMe VM](https://uploadnow.io/files/jdghFr1)  
+[Demo VM](https://uploadnow.io/files/pnNCvpf)
