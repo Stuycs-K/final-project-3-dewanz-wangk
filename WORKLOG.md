@@ -34,6 +34,10 @@ Trying to get VM working on the THM room.
 
 Finish SSH exploit section. Set up server for demo.
 
+### 06/01/23
+
+Dry run through lesson and finalizing demo with THM.
+
 
 ## Zawad Dewan
 
