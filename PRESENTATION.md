@@ -58,6 +58,7 @@ Here we run `printenv`, which prints all environment variables, after using `env
 function x {
     echo "hello world"
 }
+
 x () {
     echo "hello world"
 }
