@@ -64,3 +64,7 @@ Finished(?) cgi section, will check over later, started making thm room
 ### 5/27 - 5/30 mega weekend worklog update
 
 Finished making a "fully featured" vm for the room, uploaded to tryhackme, room itself is pretty much done with its questions, next step is making demo on oracle cloud server
+
+### 5/31 - 6/1 final stretch worklog update
+
+Set up and playtested demo thm room in lieu of server, touched up presentation md, new tnpg, did run throughs, and last passes before final commits
